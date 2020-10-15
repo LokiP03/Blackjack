@@ -1,6 +1,21 @@
 import java.util.Random;
-public class Dealer {
-    public void getDealerDecision() {
+import java.util.Scanner;
+
+public class Dealer extends Spieler {
+    public void ausgabe() {
+        ausgabe("Dealer");
+    }
+    public void entscheiden() {
+        String Hit = "hit";;
+        if (getPunkte()<17) {
+            getNewCard(anzahlKarten);
+        }
+        ausgabe();
+        if (getPunkte()<17){
+            entscheiden();
+        }
+    }
+    /*public void getDealerDecision() {
         Karten cards = new Karten();
         Random rnd = new Random();
         int auswahl;
@@ -11,21 +26,17 @@ public class Dealer {
 
 
 
-        switch (myauswahl[auswahl]){
+        if (karte3.getWert < 17){
+            Karte karte8 = cards.getNewCard();
 
-            case "Hit":
-                String karte8 = cards.getNewCard().getBezeichnung();
-                System.out.println(karte8);
-                break;
+            System.out.println(karte8.getBezeichnung());
 
-            case "Stand":
 
-                System.out.println("Stand");
-                break;
+        } else {
 
-            default:
-                System.out.println("Error");
 
         }
+
+     */
     }
-}
+

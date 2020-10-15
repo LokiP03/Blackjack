@@ -9,4 +9,7 @@ public class Karte {
     public String getBezeichnung() {
         return this.bezeichnung;
     }
+    public int getWert() {
+        return this.wert;
+    }
 }

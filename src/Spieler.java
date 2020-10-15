@@ -1,32 +1,42 @@
-import java.util.Scanner;
-class Spieler {
-    public void player() {
-        Karten cards = new Karten();
-        Scanner sc = new Scanner(System.in);
-        String Hit = "hit";
-        String Stand = "stand";
-        String Dhit = "dhit";
-        System.out.println("hit, stand oder dhit: ");
-        String auswahl = sc.next();
-        if(auswahl.equals(Hit)) {
+public class Spieler {
+    protected Karte[] karten = new Karte[6];
+    protected int anzahlKarten = 0;
 
-            Karte karte5 = cards.getNewCard();
+    public void getNewCard(int pos) {
+        karten[pos] = Karten.getNewCard();
+        anzahlKarten++;
+    }
 
-            System.out.println(karte5.getBezeichnung());
+    public void getFirstCards() {
+        getNewCard(0);
+        getNewCard(1);
+    }
 
-        } else if(auswahl.equals(Stand)) {
-            System.out.println("Stand");
-        } else if(auswahl.equals(Dhit)) {
+    protected void ausgabe(String spieler) {
+        System.out.println("\n");
+        System.out.println(spieler + ":");
+        for (int x = 0; x < anzahlKarten; x++) {
+            System.out.println(karten[x].getBezeichnung());
+        }
+        System.out.println("Punkte: " + getPunkte());
 
-            Karte karte6 = cards.getNewCard();
-            Karte karte7 = cards.getNewCard();
+    }
 
-            System.out.println(karte6.getBezeichnung());
-            System.out.println(karte7.getBezeichnung());
+    public int getPunkte() {
+        int punkte = 0;
+        for (int x = 0; x < anzahlKarten; x++) {
+            if ((punkte + karten[x].getWert()) > 21 && karten[x].getWert() == 11) {
+                punkte += 1;
+            } else {
+                punkte += karten[x].getWert();
+            }
+        }
+            return punkte;
+    }
 
-        } else {
-            System.out.println("Falsche Wahl");
+        public void restart(){
+            karten = new Karte[6];
+            anzahlKarten = 0;
         }
     }
 
-}

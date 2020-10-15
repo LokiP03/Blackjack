@@ -1,14 +1,8 @@
 import java.util.Random;
 
-
 public class Karten {
 
-    public Karte getNewCard() {
-        Random rnd = new Random();
-        //int spielkarte;
-            //String[] myCards = {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
-
-            //System.out.println(myCards[spielkarte]);
+    private static Karte[] getAvailableCards() {
         Karte[] myCards = new Karte[13];
         myCards[0]=new Karte(2,"Two");
         myCards[1]=new Karte(3,"Three");
@@ -23,8 +17,11 @@ public class Karten {
         myCards[10]=new Karte(10,"Queen");
         myCards[11]=new Karte(10,"King");
         myCards[12]=new Karte(11,"Ace");
+        return myCards;
+    }
 
-        return myCards[1 + rnd.nextInt(myCards.length - 1)];
-
+    public static Karte getNewCard() {
+        Random rnd = new Random();
+        return getAvailableCards()[1 + rnd.nextInt(getAvailableCards().length - 1)];
     }
 }
