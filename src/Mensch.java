@@ -16,6 +16,9 @@ class Mensch extends Spieler {
         else if (auswahl.equals(Stand)) {
             return;
         }
+        else{
+            System.out.println("No, Try it again");
+        }
     ausgabe();
         if (getPunkte()<21){
             entscheiden();
