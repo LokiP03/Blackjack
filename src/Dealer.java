@@ -5,28 +5,22 @@ public class Dealer {
         Random rnd = new Random();
         int auswahl;
 
-        String[] myauswahl = {"Hit", "Stand", "Dhit"};
+        String[] myauswahl = {"Hit", "Stand"};
 
         auswahl = 1 + rnd.nextInt(myauswahl.length - 1);
+
 
 
         switch (myauswahl[auswahl]){
 
             case "Hit":
-                String karte8 = cards.getNewCard();
+                String karte8 = cards.getNewCard().getBezeichnung();
                 System.out.println(karte8);
                 break;
 
             case "Stand":
 
                 System.out.println("Stand");
-                break;
-
-            case "Dhit":
-                String karte9 = cards.getNewCard();
-                String karte10 = cards.getNewCard();
-                System.out.println(karte9);
-                System.out.println(karte10);
                 break;
 
             default:

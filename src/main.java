@@ -22,19 +22,19 @@ public class main {
         if (!bg.equals(ph)) {
             System.out.print("Error -1");
         } else {
-            String karte1 = cards.getNewCard();
-            String karte2 = cards.getNewCard();
-            String[] cardsToDisplay = {karte1, karte2};
+            Karte karte1 = cards.getNewCard();
+            Karte karte2 = cards.getNewCard();
+            Karte[] cardsToDisplay = {karte1, karte2};
             playground.anzeigenBenutzer(cardsToDisplay);
 
 
             System.out.println("\n");
             System.out.println("Dealer:");
-            String karte3 = cards.getNewCard();
-            String karte4 = cards.getNewCard();
+            Karte karte3 = cards.getNewCard();
+            Karte karte4 = cards.getNewCard();
 
-            System.out.println(karte3);
-            System.out.println(karte4);
+            System.out.println(karte3.getBezeichnung());
+            System.out.println(karte4.getBezeichnung());
 
             System.out.println("\n");
 
@@ -42,8 +42,8 @@ public class main {
             Spieler p1 = new Spieler();
             p1.player();
 
-            System.out.println(karte1);
-            System.out.println(karte2);
+            System.out.println(karte1.getBezeichnung());
+            System.out.println(karte2.getBezeichnung());
             System.out.println("\n");
 
             dealer.getDealerDecision();
