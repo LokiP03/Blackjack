@@ -20,7 +20,7 @@ public class main {
         String ph = "bj";
 
         if (!bg.equals(ph)) {
-            System.out.print("Error -1");
+            System.out.print("Error");
         } else {
             Karte karte1 = cards.getNewCard();
             Karte karte2 = cards.getNewCard();
